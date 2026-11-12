@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Glassmorphism utility */
+.glass-panel-dark {
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+/* Heartbeat ECG Line Animations */
+@keyframes ecg-dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-ecg-trace {
+  stroke-dasharray: 1000;
+  animation: ecg-dash 2.8s linear infinite;
+}
+
+@keyframes ecg-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(20, 184, 166, 0.6));
+    opacity: 0.85;
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(45, 212, 191, 0.95));
+    opacity: 1;
+  }
+}
+
+.animate-ecg-glow {
+  animation: ecg-glow 1.4s ease-in-out infinite;
+}
+
+/* Sound-free Restricted Zone Alert Visual Pulse */
+@keyframes alert-visual-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7), inset 0 0 0 0 rgba(239, 68, 68, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 35px 8px rgba(239, 68, 68, 0.45), inset 0 0 20px 2px rgba(239, 68, 68, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0), inset 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+.alert-visual-pulse {
+  animation: alert-visual-pulse 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Bounding box glow */
+@keyframes green-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.5), inset 0 0 8px rgba(16, 185, 129, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.8), inset 0 0 14px rgba(16, 185, 129, 0.35);
+  }
+}
+
+.glow-green {
+  animation: green-glow-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes red-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.6), inset 0 0 8px rgba(239, 68, 68, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.9), inset 0 0 15px rgba(239, 68, 68, 0.4);
+  }
+}
+
+.glow-red {
+  animation: red-glow-pulse 1.2s ease-in-out infinite;
+}
+
+/* Subtle background gradient drift */
+@keyframes gradient-drift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-drift {
+  background-size: 200% 200%;
+  animation: gradient-drift 18s ease infinite;
+}

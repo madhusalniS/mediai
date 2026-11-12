@@ -1,0 +1,6 @@
+{
+  "name": "MediGuard AI – Hospital Visitor & Staff Verification",
+  "description": "MediGuard AI is an intelligent hospital visitor and staff verification platform developed at Hindustan Institute of Technology and Science (HITS), featuring in-browser facial detection and restricted zone security alerts.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
